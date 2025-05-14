@@ -27,8 +27,9 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               {
-                "glob": "**/*",
-                "input": "public"
+                "glob": "config.env.json",
+                "input": "src/config",
+                "output": "."
               }
             ],
             "styles": [

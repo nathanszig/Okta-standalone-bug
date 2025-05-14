@@ -1,0 +1,47 @@
+<header
+    class="header top-0 z-1 sticky bg-white flex items-center justify-between p-(--header-spacing) h-(--header-height) border-b border-(--header-delimiter-color)"
+>
+    <a
+        [routerLink]="
+            user?.role !== UserRole.Partner
+                ? RoutesEnum.PAGE_1.id
+                : RoutesEnum.PAGE_3.id
+        "
+        class="logo -m-(--header-spacing) pl-[1.4375rem]"
+    >
+    </a>
+    @if (user?.role !== UserRole.Partner) {
+        <nav class="nav">
+            <ul class="nav-items flex align-center mx-[-1.5rem] leading-none">
+                <li
+                    class="nav-item px-5 py-0"
+                    *ngFor="let item of navItems"
+                    [class.selected]="router.url.startsWith('/' + item.id)"
+                >
+                    <a
+                        class="link inline-block"
+                        [title]="'route._'"
+                        [routerLink]="item.id"
+                        routerLinkActive="active"
+                    >
+                        aaaa
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    }
+    <div class="user-section flex align-center">
+        <ng-container>
+            <span
+                class="username px-[0.5rem] py-0 text-(length:--font-size-regular) text-(--dark-red)"
+                >{{ user?.name }}</span
+            >
+            <span
+                id="icon-logout"
+                class="icon-logout icon logout text-[20px] cursor-pointer -mt-[0.125rem] text-(length:--font-size-regular) size-[2.5rem] text-(--dark-red)"
+                (click)="oktaService.signOut()"
+            >
+            </span>
+        </ng-container>
+    </div>
+</header>

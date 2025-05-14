@@ -1,0 +1,67 @@
+.daily-folders {
+    display: flex;
+    flex-flow: column;
+}
+
+.daily-kpi {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    min-width: 264px;
+    width: 15%;
+    gap: 32px;
+
+    @media screen and (max-height: 850px) {
+        gap: 16px;
+    }
+}
+
+.kpi-card:first-child {
+    margin-top: 64px;
+
+    @media screen and (max-height: 850px) {
+        margin-top: 24px;
+    }
+}
+
+.kpi-card {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    align-items: center;
+    padding-top: 16px;
+    width: 200px;
+    gap: 24px;
+    padding-bottom: 32px;
+
+    @media screen and (max-height: 850px) {
+        padding-bottom: 16px;
+        gap: 0;
+    }
+
+    .kpi-header {
+        display: flex;
+        flex-flow: row;
+        gap: 16px;
+
+        .icon {
+        }
+
+        p {
+            font-size: 14px;
+            text-align: left;
+        }
+    }
+
+    .stat {
+        font-size: 32px;
+    }
+}
+
+.kpi-footer {
+    padding-bottom: 32px;
+
+    @media screen and (max-height: 850px) {
+        padding-bottom: 16px;
+    }
+}

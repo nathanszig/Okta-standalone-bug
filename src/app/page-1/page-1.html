@@ -1,0 +1,88 @@
+<div class="daily flex flex-row w-full h-full overflow-hidden">
+    <div
+        class="daily-folders"
+        [ngClass]="user?.role !== UserRole.Admin ? 'w-full' : 'w-[85%]'"
+    >
+        <div class="pl-[32px] !mt-[24px] mr-[20px] flex row justify-between">
+            <h2 class="text-[24px] font-semibold">
+                ah
+            </h2>
+            <div class="flex row gap-[16px]">
+                <button
+                    class="cursor-pointer flex row gap-[5px] !justify-center !items-center !text-(--white) w-full !w-[160px] h-[40px] bg-(--blue) border rounded"
+                >
+                    <span class="icon-plus size-[16px]"></span>
+                    <span class="text-[14px]">
+                        a
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="daily-kpi bg-(--lighter-grey-4)">
+        <div class="kpi-card rounded">
+            <div class="kpi-header">
+                <span class="icon icon-manager text-[30px]"></span>
+                <p>
+                    aaaa <br />
+                    aaa
+                </p>
+            </div>
+            <p class="stat">
+                <b>
+                    {{ String(toMergeCount) }}
+                </b>
+            </p>
+            <button
+                class="cursor-pointer flex row gap-[8px] !justify-center !items-center !text-(--blue) !w-[136px] !min-h-[40px] bg-(--white) border rounded"
+            >
+                <span class="icon-plus size-[16px]"></span>
+                <span class="text-[14px] font-medium">
+                    aaaaa
+                </span>
+            </button>
+        </div>
+        <div class="kpi-card rounded">
+            <div class="kpi-header">
+                <span class="icon icon-manager text-[30px]"></span>
+                <p>
+                    aaaa <br />
+                    aaaa
+                </p>
+            </div>
+            <p class="stat">
+                <b>
+                    {{ String(userDailyCount) }}
+                </b>
+                {{ todoDailyCount > 0 ? "/ " + String(todoDailyCount) : "" }}
+            </p>
+        </div>
+        <div class="kpi-card rounded">
+            <div class="kpi-header">
+                <span class="icon icon-manager text-[30px]"></span>
+                <p>
+                    aaaa <br />
+                    aaaa
+                </p>
+            </div>
+            <p class="stat">
+                <b>
+                    {{ totalDailyCount }}
+                </b>
+                {{ todoDailyCount > 0 ? "/ " + String(todoDailyCount) : "" }}
+            </p>
+        </div>
+        <div class="kpi-footer mt-auto pb-[32px] flex flex-row gap-[16px]">
+            <button
+                class="w-[48px] h-[48px] flex cursor-pointer border rounded-full border-(--blue) text-(--blue)"
+            >
+                <span class="icon-up text-[16px] mt-[13px] m-auto"></span>
+            </button>
+            <button
+                class="w-[48px] h-[48px] flex cursor-pointer border rounded-full border-(--blue) text-(--blue)"
+            >
+                <span class="icon-files mt-[13px] m-auto text-[20px]"></span>
+            </button>
+        </div>
+    </div>
+</div>
